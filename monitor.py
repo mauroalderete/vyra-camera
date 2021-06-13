@@ -1,19 +1,20 @@
 import cv2
+from enum import Enum
 
-print("Before URL")
-cap = cv2.VideoCapture('http://admin:123456@192.168.0.240/media/?action=stream')
-print("After URL")
+class MonitorState(Enum):
+    INITED = 0
+    RUNNING = 1
+    DISPOSED = 2
 
-while True:
+class Monitor:
+    def __init__(self, name):
+        self.name = name
+        self.state = MonitorState.INITED
+    
+    def show(self, frame):
+        self.state = MonitorState.RUNNING
+        cv2.imshow(self.name,frame)
 
-    print('About to start the Read command')
-    ret, frame = cap.read()
-    print('About to show frame of Video.')
-    cv2.imshow("Capturing",frame)
-    print('Running..')
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-cap.release()
-cv2.destroyAllWindows()
+    def dispose(self):
+        cv2.destroyAllWindows()
+        self.state = MonitorState.DISPOSED
