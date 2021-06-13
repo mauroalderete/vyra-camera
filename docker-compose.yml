@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
     app:
-        image: vyra-camera:latest
+        image: rayquen/vyra-camera:latest
         restart: always
         environment:
             CAM_USERNAME: admin
