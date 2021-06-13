@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 12/06/2021 Testing OpenCV Solution
+
+Implemente un servidor con Flask con dos rutas. El index incorpora un img que visualiza un stream de una imagen jpg multiparte provista por la ruta /video.
+La ruta /video entrega un flujo continuo de captura de imagenes por medio de opencv
+
+Para esto tuve que instalar Flask
+
+```bash
+conda install -c anaconda flask
+```
+
+El servidor se activa en modo debug
+Los nombres de usuario, password y url se harcodean en app.py
+
 ## 12/06/2021 Pruebas
 
 Trate de utilizar el html y javascript que resulta del acceso al servidor de video de la camara IP. Pero tiene CORS activado, por lo que no se puede obtener acceso a nada mas que la imagen en forma de lectura.
