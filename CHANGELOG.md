@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 13/06/2021 docker deploy
+
+Preparo los archivos para que se pueda implementar como un servicio de docker.
+Se puede ejecutar con docker compose usando docker-compose.yml que acompaña al proyecto, cambiando el puerto segun se requiera.
+Tambien se puede ejecutar un contenedor con 
+
+```bash
+docker run --publish 6001:5000 -e CAM_USERNAME=admin -e CAM_PASSWORD=123456 -e CAM_URL=192.168.0.240/media?action=stream vyra-camera
+```
+
+Indicando los puertos a exponer y los valores de las varaibles de entorno.
+
 ## 12/06/2021 Testing OpenCV Solution
 
 Implemente un servidor con Flask con dos rutas. El index incorpora un img que visualiza un stream de una imagen jpg multiparte provista por la ruta /video.

@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+    app:
+        image: vyra-camera:latest
+        restart: always
+        environment:
+            CAM_USERNAME: admin
+            CAM_PASSWORD: 123456
+            CAM_URL: 192.168.0.240/media/?action=stream
+        ports:
+            - "6001:5000"
