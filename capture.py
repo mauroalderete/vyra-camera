@@ -13,13 +13,19 @@ class Capture:
     def __init__(self, username, password, url):
         self.username = username
         self.password = password
-        self.url = url
+
+        tempurl = url
+        tempurl = tempurl.replace("{user}", self.username)
+        tempurl = tempurl.replace("{password}", self.password)
+
+        self.url = tempurl
         self.state = CaptureState.INITED
 
     def connect(self):
         try:
-            print("[capture::connect] Connecting to "+'http://'+self.username+':'+self.password+'@'+self.url)
-            self.cap = cv2.VideoCapture('http://'+self.username+':'+self.password+'@'+self.url)
+            
+            print("[capture::connect] Connecting to "+self.url)
+            self.cap = cv2.VideoCapture(self.url)
             self.state = CaptureState.CONNECTED
         except:
             print("[Capture::error] Capture Connection Error: ", sys.exc_info()[0])

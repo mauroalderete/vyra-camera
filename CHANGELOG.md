@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 22/06/2021 Feature inclusion de protocolos
+
+Debido a la incorporacion de una camara Dahua nueva, es necesario incluir otros tipos de protocolos que permitan capturar las imagenes
+
+Se modifica capture para construir una url en función de los valores del definidas en las varaibles de entorno.
+La url final se construye a partir de una plantilla de url que se reemplazara integrando los datos de usuario y contraseña.
+
+las url tienen una apariencia similar a:
+
+protocolo://usuario:passwor@ip/carpetas?otrainfo
+
+los datos de usuario y passoword deben ser ingresados como tags (frases encerradas entre {}) para que sean insertados en la ruta
+
 ## 13/06/2021 docker deploy
 
 Preparo los archivos para que se pueda implementar como un servicio de docker.
