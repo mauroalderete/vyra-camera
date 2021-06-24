@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## 22/06/2021 Release v1.1.0
+
+Libero nueva version con la posibilidad de incluir nuevos protocolos
+
+Se agrega las instrucciones de compilacion
+
+```bash
+docker build -t rayquen/vyra-camera:latest .
+docker build -t rayquen/vyra-camera:1 .
+docker build -t rayquen/vyra-camera:1.0.0 .
+```
+
+Lineas para subir imagenes
+
+```bash
+docker push rayquen/vyra-camera:latest
+docker push rayquen/vyra-camera:1
+docker push rayquen/vyra-camera:1.1.0
+```
+
 ## 22/06/2021 Feature inclusion de protocolos
 
 Debido a la incorporacion de una camara Dahua nueva, es necesario incluir otros tipos de protocolos que permitan capturar las imagenes
